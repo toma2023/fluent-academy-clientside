@@ -1,0 +1,98 @@
+
+  [
+    {
+        "id": 1,
+        "name": "Spanish 101",
+        "category": "Spanish",
+        "details": "Learn the fundamentals of the Spanish language, including grammar, vocabulary, and basic conversation skills.",
+        "image": "https://i.ibb.co/G0n9xGj/spanish.webp",
+        "students": 200,
+        "price": 119
+      },
+      {
+        "id": 2,
+        "name": "French for Beginners",
+        "category": "French",
+        "details": "Discover the beauty of the French language through interactive lessons covering pronunciation, grammar, and essential phrases.",
+        "image": "https://i.ibb.co/9NxhLzq/French.png",
+        "students": 400,
+        "price": 99
+      },
+      {
+        "id": 3,
+        "name": "German Immersion",
+        "category": "German",
+        "details": "Immerse yourself in the German language and culture with this intensive course, focusing on speaking, reading, and listening comprehension.",
+        "image": "https://i.ibb.co/cygh4Yc/German.jpg",
+        "students": 600,
+        "price": 99
+      },
+      {
+        "id": 4,
+        "name": "Italian Conversation",
+        "category": "Italian",
+        "details": "Enhance your Italian language skills by engaging in conversations, discussing various topics, and improving your fluency.",
+        "image": "https://i.ibb.co/g3GPRbH/italian.png",
+        "students": 240,
+        "price": 109
+      },
+      {
+        "id": 5,
+        "name": "Japanese Writing Workshop",
+        "category": "Japanese",
+        "details": "Master the art of writing in Japanese, from the basic Hiragana and Katakana characters to more advanced Kanji characters.",
+        "image": "https://i.ibb.co/vXL02BN/Japanese.png",
+        "students": 205,
+        "price": 119
+      },
+      {
+        "id": 6,
+        "name": "Mandarin Chinese for Business",
+        "category": "Chinese",
+        "details": "Develop your Mandarin Chinese language proficiency for business purposes, including vocabulary, cultural etiquette, and negotiation skills.",
+        "image": "https://i.ibb.co/1sYM894/chines.jpg",
+        "students": 208,
+        "price": 99
+      },
+      {
+        "id": 7,
+        "name": "Russian Grammar Made Easy",
+        "category": "Russian",
+        "details": "Simplify the complexities of Russian grammar and gain confidence in reading, writing, and speaking this fascinating language.",
+        "image": "https://i.ibb.co/RjCvyzv/Russian.webp",
+        "students": 265,
+        "price": 129
+      },
+      {
+        "id": 8,
+        "name": "Arabic Calligraphy",
+        "category": "Arabic",
+        "details": "Explore the art of Arabic calligraphy, learning different styles and techniques to create beautiful and meaningful written expressions.",
+        "image": "https://i.ibb.co/h1sZP3y/arabic.png",
+        "students": 299,
+        "price": 99
+      },
+      {
+        "id": 9,
+        "name": "Portuguese for Travelers",
+        "category": "Portuguese",
+        "details": "Prepare for your trip to Brazil or Portugal by mastering essential Portuguese phrases and cultural nuances to enhance your travel experience.",
+        "image": "https://i.ibb.co/zH0QfyS/portuguese.jpg",
+        "students": 300,
+        "price": 119
+      },
+      {
+        "id": 10,
+        "name": "Korean Pop Culture and Language",
+        "category": "Korean",
+        "details": "Dive into the world of Korean pop culture, learning the language through K-pop songs, dramas, and popular expressions.",
+        "image": "https://i.ibb.co/ZGvs6MJ/Korean.png",
+        "students": 555,
+        "price": 129
+      }
+  ] 
+ 
+
+  
+ 
+  

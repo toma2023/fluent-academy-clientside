@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "name": "Maria Rodriguez",
+        "specialization": "Spanish 101 Conversation",
+        "email": "maria@gmail.com",
+        "image": "https://i.ibb.co/ZzQJXJ2/istockphoto-1030371230-612x612-removebg-preview.png",
+        "students": 200
+      },
+    {
+      "id": 2,
+      "name": "John Smith",
+      "specialization": "French Conversation",
+      "email": "john@gmail.com",
+      "image": "https://i.ibb.co/25tNxp5/istockphoto-1412644711-612x612-removebg-preview.png",
+      "students": 400
+    },
+   
+    {
+      "id": 3,
+      "name": "Yoshiro Tanaka",
+      "specialization": "German Conversation",
+      "email": "tanaka@gmail.com",
+      "image": "https://i.ibb.co/KjTNxwg/istockphoto-652564018-612x612-removebg-preview.png",
+      "students": 600
+    },
+    {
+      "id": 4,
+      "name": "Isabella Rossi",
+      "specialization": "Italian Conversation",
+      "email": "rossi@gmail.com",
+      "image": "https://i.ibb.co/TH4Cn3k/istockphoto-1314997412-612x612-removebg-preview.png",
+      "students": 240
+    },
+
+
+    {
+      "id": 5,
+      "name": "Mikhail Petrov",
+      "specialization": "Japanese Grammar Made Easy",
+      "email": "petrov@gmail.com",
+      "image": "https://i.ibb.co/LJWf2BQ/istockphoto-589544922-612x612-removebg-preview.png",
+      "students": 205
+    },
+    {
+      "id": 6,
+      "name": "Chen Li",
+      "specialization": "Mandarin Chinese for Business and Language",
+      "email": "chen@gmail.com",
+      "image": "https://i.ibb.co/KGGgHxZ/istockphoto-589544922-612x612.jpg",
+      "students": 75
+    },
+    {
+        "id": 7,
+      "name": "Anna Kowalski",
+      "specialization": "Russian Calligraphy and Language",
+      "email": "anna@gmail.com",
+      "image": "https://i.ibb.co/vXSq0kt/istockphoto-965248420-2048x2048-removebg-preview.png",
+      "students": 265
+    },
+    {
+      "id": 8,
+      "name": "Fatima Hassan",
+      "specialization": "Arabic Calligraphy and Language",
+      "email": "fatima@gmail.com",
+      "image": "https://i.ibb.co/M5jKRFX/istockphoto-1080068026-612x612-removebg-preview.png",
+      "students": 299
+    },
+    {
+      "id": 9,
+      "name": "Diego Silva",
+      "specialization": "Portuguese for Travelers and Language",
+      "email": "diego@gmail.com",
+      "image": "https://i.ibb.co/8YVJMzP/istockphoto-1172665289-2048x2048-removebg-preview.png",
+      "students": 300
+    },
+    {
+      "id": 10,
+      "name": "Hiroshi Yamamoto",
+      "specialization": "Korean Culture and Language",
+      "email": "hiroshi@gmail.com",
+      "image": "https://i.ibb.co/ZzQJXJ2/istockphoto-1030371230-612x612-removebg-preview.png",
+      "students": 555
+    }
+  ]
+  
