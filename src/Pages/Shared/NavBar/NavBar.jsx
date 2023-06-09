@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { Link} from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { FaShoppingCart } from "react-icons/fa";
-
+//import { FaShoppingCart } from "react-icons/fa";
+import {  MdBookmarkAdd } from "react-icons/md";
 import useSelectedCourse from "../../Hooks/useSelectedCourse";
 
 
@@ -33,7 +33,7 @@ const NavBar = () => {
             <li><Link to="/dashboard/mySelectedClass">
            
             <button className="btn gap-2">
-                <FaShoppingCart></FaShoppingCart>
+                <MdBookmarkAdd></MdBookmarkAdd>
                 <div className="badge badge-primary">{selects?.length || 0}</div>
             </button>
         </Link></li>
