@@ -5,14 +5,16 @@ import PopularInstructors from "../PopularInstructors/PopularInstructors";
 
 
 const Home = () => {
-    return (
-        <div>
-          <Banner></Banner>
-          <PopularClasses></PopularClasses>
-          <PopularInstructors></PopularInstructors>
-          <AnimationSection></AnimationSection>
-        </div>
-    );
+ 
+
+  return (
+    <div>  
+      <Banner></Banner>
+      <PopularClasses></PopularClasses>
+      <PopularInstructors></PopularInstructors>
+      <AnimationSection></AnimationSection>
+    </div>
+  );
 };
 
 export default Home;

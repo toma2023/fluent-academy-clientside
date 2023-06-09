@@ -22,7 +22,7 @@ const PopularClasses = () => {
     }, []);
     return (
         <div className="my-14">
-            <h2>Popular Classes</h2>
+           
             <h2 className="text-3xl font-bold mb-4">Top Classes</h2>
             <div className="grid md:grid-cols-3 gap-4">
                 {topClasses.map((classItem) => (

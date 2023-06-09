@@ -9,7 +9,7 @@ const Instructors = () => {
         // Simulating fetching instructor data
         const fetchInstructors = async () => {
             try {
-                const response = await fetch("instructors.json");
+                const response = await fetch("http://localhost:5000/instructors");
                 const instructors = await response.json();
                 setInstructors(instructors);
             } catch (error) {
