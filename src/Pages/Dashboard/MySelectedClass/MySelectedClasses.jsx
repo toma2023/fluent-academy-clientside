@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import useSelectedCourse from "../../Hooks/useSelectedCourse";
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const MySelectedClasses = () => {
@@ -42,7 +43,7 @@ const MySelectedClasses = () => {
                 <h2 >My Selected Classes</h2>
                 <h2>Total Items: {selects.length}</h2>
                 <h2>Total Price: $ {total}</h2>
-                <button className="btn btn-primary">Pay</button>
+               <Link to="/dashboard/payment"> <button className="btn btn-primary">Pay</button></Link>
             </div>
             <div className="overflow-x-auto w-full ms-10">
                 <table className="table w-full">

@@ -4,6 +4,7 @@ import useAdmin from "../Pages/Hooks/UseAdmin";
 import useInstructor from "../Pages/Hooks/useInstructor";
 import { SiGoogleclassroom } from "react-icons/si";
 import { MdAssignmentAdd, MdBookmarkAdd, MdOutlineAddChart, MdPayments } from "react-icons/md";
+import useSelectedCourse from "../Pages/Hooks/useSelectedCourse";
 
 
 
@@ -13,7 +14,7 @@ const Dashboard = () => {
     // const isInstructor = true;
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
-
+    const [selects] = useSelectedCourse();
 
 
     return (
@@ -43,7 +44,7 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to="/dashboard/allUsers"><FaUsers></FaUsers>  Manage All Users</NavLink>
                             </li>
-                           
+
 
                         </>) : isInstructor ? (
 
@@ -64,10 +65,10 @@ const Dashboard = () => {
                             <>
 
                                 <li>
-                                    <NavLink to="/dashboard/mySelectedClass">   <MdBookmarkAdd></MdBookmarkAdd> My Selected Classes</NavLink>
+                                    <NavLink to="/dashboard/mySelectedClass">   <MdBookmarkAdd></MdBookmarkAdd> My Selected Classes <span className="badge badge-secondary">+{selects?.length || 0}</span></NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/payment"><MdPayments></MdPayments>  Payment History </NavLink>
+                                    <NavLink to="/dashboard/payment"><MdPayments></MdPayments>  Payment  </NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/booked"><FaBook></FaBook>  My Enrolled Class </NavLink>
