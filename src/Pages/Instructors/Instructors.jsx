@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 
 
 const Instructors = () => {
-    const [instructors, setInstructors] = useState();
-    //How does reduce work
+   const [instructors, setInstructors] = useState();
+   // How does reduce work
     useEffect(() => {
         // Simulating fetching instructor data
         const fetchInstructors = async () => {

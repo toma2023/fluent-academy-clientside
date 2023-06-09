@@ -27,11 +27,11 @@ const NavBar = () => {
                 <Link to="/dashboard" className="text-lg lg:text-white font-bold">Dashboard</Link>
             </li>
             <li><Link to="/dashboard/mySelectedClass">
-            <FaShoppingCart></FaShoppingCart>
-            {/* <button className="btn gap-2">
+           
+            <button className="btn gap-2">
                 <FaShoppingCart></FaShoppingCart>
-                <div className="badge badge-secondary">+{cart?.length || 0}</div>
-            </button> */}
+                <div className="badge badge-primary">+ 0</div>
+            </button>
         </Link></li>
 
 

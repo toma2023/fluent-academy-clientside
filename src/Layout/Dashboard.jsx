@@ -52,7 +52,7 @@ const Dashboard = () => {
                                     <NavLink to="/dashboard/addAClass" className="hover:bg-emerald-700"><MdAssignmentAdd></MdAssignmentAdd> Add a Class  </NavLink>
                                 </li>
                                 <li className="mt-2">
-                                    <NavLink to="/dashboard/addClass" className="hover:bg-emerald-700"><MdOutlineAddChart></MdOutlineAddChart> My Classes  </NavLink>
+                                    <NavLink to="/dashboard/myClasses" className="hover:bg-emerald-700"><MdOutlineAddChart></MdOutlineAddChart> My Classes  </NavLink>
                                 </li>
                                 <li className="mt-2">
                                     <NavLink to="/dashboard/addClass" className="hover:bg-emerald-700"><MdOutlineAddChart></MdOutlineAddChart>Total Enrolled Students </NavLink>
