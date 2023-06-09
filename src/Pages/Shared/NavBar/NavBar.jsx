@@ -3,9 +3,13 @@ import { Link} from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaShoppingCart } from "react-icons/fa";
 
+import useSelectedCourse from "../../Hooks/useSelectedCourse";
+
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [selects] = useSelectedCourse();
+   
     const handleLogOut = () => {
         logOut()
             .then()
@@ -30,7 +34,7 @@ const NavBar = () => {
            
             <button className="btn gap-2">
                 <FaShoppingCart></FaShoppingCart>
-                <div className="badge badge-primary">+ 0</div>
+                <div className="badge badge-primary">{selects?.length || 0}</div>
             </button>
         </Link></li>
 

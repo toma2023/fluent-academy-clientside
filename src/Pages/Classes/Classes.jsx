@@ -58,7 +58,7 @@ const Classes = () => {
     return (
         <div>
             <h2>Approved Classes</h2>
-            <div className='grid md:grid-cols-3 gap-4'>
+            <div className='grid md:grid-cols-3 gap-8 my-32'>
                 {
                     approvedClasses.map(data=><> <div key={data._id} className='grid md:grid-cols-3 gap-8'>
                     <div className="card w-96 bg-base-100 shadow-xl">

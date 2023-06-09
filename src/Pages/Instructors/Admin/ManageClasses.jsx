@@ -1,26 +1,30 @@
-import { useState, useEffect } from 'react';
-import useAxiosSecure from '../../Hooks/useAxiosSecure';
+// import { useState, useEffect } from 'react';
+// import useAxiosSecure from '../../Hooks/useAxiosSecure';
 //import Swal from 'sweetalert2';
+
+import useAddClass from "../../Hooks/useAddClass";
 
 
 
 const ManageClasses = () => {
-    const [classes, setClasses] = useState([]);
-  const [axiosSecure] = useAxiosSecure();
+  //   const [classes, setClasses] = useState([]);
+  // const [axiosSecure] = useAxiosSecure();
 
   // Fetch the classes from the database
-  useEffect(() => {
-    axiosSecure.get('/addClass')
-      .then(response => {
-        setClasses(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, [axiosSecure]);
+  // useEffect(() => {
+  //   axiosSecure.get('/addClass')
+  //     .then(response => {
+  //       setClasses(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }, [axiosSecure]);
 
   // Update the status of a class
-  
+  const [addClass, ,refetch] = useAddClass();
+
+
   const updateClassStatus = (id, status ) => {
     console.log(status, id);
     fetch(`http://localhost:5000/addClass/${id}`, {
@@ -33,7 +37,7 @@ const ManageClasses = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        
+        refetch();
       });
   };
 
@@ -80,7 +84,7 @@ const ManageClasses = () => {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {classes.map(cls => (
+          {addClass.map(cls => (
             <tr key={cls?._id}>
               <td className="px-6 py-4 whitespace-nowrap">
                 <img src={cls?.image} alt="Class" className="h-12 w-12 rounded-full" />
