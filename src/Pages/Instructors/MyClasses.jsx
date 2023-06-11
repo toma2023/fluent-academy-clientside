@@ -162,15 +162,15 @@ const MyClasses = () => {
                             <td className="px-6 py-4 whitespace-nowrap">
                                 {cls?.className}
                             </td>
-                            <td>{cls.status}</td>
+                            <td>{cls?.status}</td>
                             <td className="px-6 py-4 whitespace-nowrap">
-                                {cls.seats}
+                                {cls?.seats}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
-                                {cls.price}
+                                {cls?.price}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
-                                {cls.enrolled ? cls.enrolled : "0"}
+                                {cls?.enrollStudent ? cls?.enrollStudent : "0"}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                                 {cls?.status === 'denied' ? cls?.feedback : ''}
