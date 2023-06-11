@@ -65,7 +65,7 @@ const AddAClass = () => {
 
     return (
         <div>
-            <h2 className="text-4xl">Add a New Class</h2>
+             <h2 className="text-5xl  font-semibold mb-8"><span className="text-secondary">Add</span> A New Class</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control w-full mb-4">
                     <label className="label">

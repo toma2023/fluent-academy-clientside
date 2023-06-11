@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
-//FaUserShield
+
 
 const AllUsers = () => {
 const [axiosSecure] = useAxiosSecure();
@@ -11,7 +11,6 @@ const [axiosSecure] = useAxiosSecure();
         return res.data;
     })
     
-
     const handleMakeAdmin = user => {
       fetch(`http://localhost:5000/users/admin/${user._id}`, {
             method: 'PATCH',
@@ -56,8 +55,8 @@ const handleMakeInstructor = user =>{
 
     
     return (
-        <div>
-          
+        <div className="my-14">
+           <h2 className="text-5xl ml-16 font-semibold mb-8"><span className="text-secondary">Manage</span> All Users</h2>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
                     {/* head */}

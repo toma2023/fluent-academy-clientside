@@ -8,11 +8,10 @@ const Payment = () => {
     const { id } = useParams()
     const [selects] = useSelectedCourse()
     const [paymentData, setPaymentData] = useState([])
-console.log(selects);
+   
     useEffect(() => {
         if (selects) {
-            const payData = selects.filter(data => data._id === id)
-            console.log(payData)
+            const payData = selects?.filter(data => data?._id === id)
             setPaymentData(payData);
         }
     }, [selects, id])
@@ -21,10 +20,10 @@ console.log(selects);
     return (
         <div>
             <h3 className="text-3xl font-semibold">Payment GateWay Management system by user</h3>
-           {paymentData.map(p=><Pay key={p._id} p={p} ></Pay>)
-           
-           }
-           
+            {paymentData?.map(p => <Pay key={p._id} p={p} ></Pay>)
+
+            }
+
         </div>
     );
 };

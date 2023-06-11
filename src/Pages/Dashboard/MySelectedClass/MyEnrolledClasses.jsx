@@ -20,7 +20,7 @@ const MyEnrolledClasses = () => {
 
     return (
         <>
-            <div>
+            <div className="my-14">
                 <h2 className="text-5xl text-center font-bold mb-8"><span className="text-secondary">My Enrolled</span> Classes</h2>
                 {enrollments?.length > 0 ? (
                     <div className="grid grid-cols-2 gap-8">

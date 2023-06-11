@@ -40,11 +40,9 @@ const MySelectedClasses = () => {
 
     return (
         <div>
+            <h2 className="text-5xl text-center font-bold mb-14">My <span className="text-secondary"> Selected Classes</span> </h2>
             <div className=" flex text-2xl font-semibold justify-evenly gap-4">
-                <h2 >My Selected Classes</h2>
                 <h2>Total Items: {selects.length}</h2>
-               
-
             </div>
             <div className="overflow-x-auto w-full ms-10">
                 <table className="table w-full">

@@ -3,9 +3,11 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { useParams } from "react-router-dom";
 //import './CheckoutForm.css'
 
 const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
+    const {id} = useParams();
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -15,10 +17,6 @@ const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
 
-    const enrollStudent = selects?.map(item => item?.enrollStudent)
-    const seats = selects?.map(item => item?.seats)
-    console.log(enrollStudent)
-    console.log(selects)
     useEffect(() => {
         if (payPrice > 0) {
             axiosSecure.post('/create-payment-intent', { price: payPrice })
@@ -77,6 +75,7 @@ const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
                 transactionId: paymentIntent.id,
                 price: payPrice,
                 date: new Date(),
+                classId: id,
                  enrollStudent: selects?.map(item=>item?.enrollStudent),
                 seats: selects?.map(item=>item?.seats),
                 addItems: selects?.map(item => item?._id),
@@ -88,7 +87,7 @@ const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
                 classNames: selects.map(item => item?.className)
             }
 
-        
+        console.log(payment)
 
             axiosSecure.post('/payments', payment)
                 .then(res => {
@@ -122,6 +121,7 @@ const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
                         },
                     }}
                 />
+                <p>36227206271667 1245125</p>
                 <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>

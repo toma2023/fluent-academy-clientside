@@ -121,7 +121,7 @@ const MyClasses = () => {
 
     return (
         <div className="my-12">
-              <h2 className="text-5xl text-center font-bold mb-14">My <span className="text-secondary">Payment</span> History</h2>
+              <h2 className="text-5xl text-center font-bold mb-14">My <span className="text-secondary">Classes</span> </h2>
             <table className="min-w-full divide-y divide-gray-200 ml-4">
                 <thead className="bg-gray-50">
                     <tr>

@@ -11,10 +11,8 @@ const useSelectedCourse = () => {
      const { refetch, data: selects = [] } = useQuery({
          queryKey: ['carts', user?.email],
          enabled: !loading,
-         queryFn: async () => {
-           // const res = await axiosSecure(`/selects?email=${user?.email}`)
-            const res = await axiosSecure(`/selects/${user?.email}`)
-           // console.log('res from axios', res)
+         queryFn: async () => {        
+            const res = await axiosSecure(`/selects/${user?.email}`)       
             return res.data;
         },
     })

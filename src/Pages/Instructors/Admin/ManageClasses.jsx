@@ -1,33 +1,9 @@
-// import { useState, useEffect } from 'react';
-// import useAxiosSecure from '../../Hooks/useAxiosSecure';
-//import Swal from 'sweetalert2';
-
-//import { Link } from "react-router-dom";
 import useAddClass from "../../Hooks/useAddClass";
 import Swal from "sweetalert2";
 import axios from "axios";
 
-
-
 const ManageClasses = () => {
-  //   const [classes, setClasses] = useState([]);
-  // const [axiosSecure] = useAxiosSecure();
-
-  // Fetch the classes from the database
-  // useEffect(() => {
-  //   axiosSecure.get('/addClass')
-  //     .then(response => {
-  //       setClasses(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // }, [axiosSecure]);
-
-  // Update the status of a class
   const [addClass, , refetch] = useAddClass();
-
-
   const updateClassStatus = (id, status) => {
     console.log(status, id);
     fetch(`http://localhost:5000/addClass/${id}`, {
@@ -61,19 +37,13 @@ const ManageClasses = () => {
     if (text) {
       axios.put(`http://localhost:5000/addFeedback/${id}`, {feedback: text})
         .then(res => console.log(res.data))
-
-
-
       Swal.fire(text)
     }
-
-
-
   };
 
   return (
-    <div>
-      <h2 className="text-4xl">Manage Classes</h2>
+    <div className="my-14">
+     <h2 className="text-5xl ml-16 font-semibold mb-8"><span className="text-secondary">Manage</span> Classes</h2>
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
           <tr>
