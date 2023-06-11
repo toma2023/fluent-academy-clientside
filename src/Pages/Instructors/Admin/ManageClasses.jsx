@@ -2,7 +2,10 @@
 // import useAxiosSecure from '../../Hooks/useAxiosSecure';
 //import Swal from 'sweetalert2';
 
+//import { Link } from "react-router-dom";
 import useAddClass from "../../Hooks/useAddClass";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 
 
@@ -22,10 +25,10 @@ const ManageClasses = () => {
   // }, [axiosSecure]);
 
   // Update the status of a class
-  const [addClass, ,refetch] = useAddClass();
+  const [addClass, , refetch] = useAddClass();
 
 
-  const updateClassStatus = (id, status ) => {
+  const updateClassStatus = (id, status) => {
     console.log(status, id);
     fetch(`http://localhost:5000/addClass/${id}`, {
       method: "PATCH",
@@ -44,11 +47,28 @@ const ManageClasses = () => {
 
 
   // Send feedback to the instructor
-  const sendFeedback = (classId, feedback) => {
-    // You can implement the logic to send feedback to the instructor here
-    // This can be done via an API call or any other method based on your backend setup
-    // You can display a modal or use a separate page to send feedback to the instructor
-    console.log(`Sending feedback for class ${classId}: ${feedback}`);
+  const sendFeedback = async (id) => {
+    const { value: text } = await Swal.fire({
+      input: 'textarea',
+      inputLabel: 'Message',
+      inputPlaceholder: 'Type your message here...',
+      inputAttributes: {
+        'aria-label': 'Type your message here'
+      },
+      showCancelButton: true
+    })
+
+    if (text) {
+      axios.put(`http://localhost:5000/addFeedback/${id}`, {feedback: text})
+        .then(res => console.log(res.data))
+
+
+
+      Swal.fire(text)
+    }
+
+
+
   };
 
   return (
@@ -129,7 +149,7 @@ const ManageClasses = () => {
                 {cls.status === 'approved' && (
                   <button
                     className="bg-blue-500 text-white py-2 px-4 rounded"
-                    onClick={() => sendFeedback(cls._id, 'Your class has been approved.')}
+                    onClick={() => sendFeedback(cls._id)}
                   >
                     Send Feedback
                   </button>

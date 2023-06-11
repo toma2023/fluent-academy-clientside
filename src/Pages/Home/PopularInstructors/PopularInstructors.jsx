@@ -1,47 +1,65 @@
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PopularInstructors = () => {
-    const [topInstructors, setTopInstructors] = useState([]);
+  const [instructors, setInstructors] = useState([]);
 
-    useEffect(() => {
-        // Simulating fetching instructor data
-        const fetchInstructors = async () => {
-            try {
-                const response = await fetch("popularInstructors.json");
-                const instructors = await response.json();
-                const sortedInstructors = [...instructors].sort((a, b) => b.students - a.students);
-                const topSixInstructors = sortedInstructors.slice(0, 6);
+  useEffect(() => {
+    AOS.init({ duration: 1200, offset: 200 });
+  }, []);
 
-                setTopInstructors(topSixInstructors);
-            } catch (error) {
-                console.error("Error fetching instructors:", error);
-            }
-        };
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((res) => res.json())
+      .then((data) => {
+        const instructorUsers = data.filter(
+          (user) => user.role === "instructor"
+        );
+        setInstructors(instructorUsers.slice(0, 6));
+      });
+  }, []);
 
-        fetchInstructors();
-    }, []);
-
-    return (
-        <div className="my-14">
-            <h2 className="text-3xl font-bold mb-4">Popular Instructors</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-                {topInstructors.map((instructor) => (
-                    <div key={instructor.id} className="rounded-lg overflow-hidden shadow-lg">
-                        <img
-                            src={instructor.image}
-                            alt={instructor.name}
-                            className="w-full  object-cover"
-                        />
-                        <div className="p-4">
-                            <h3 className="text-xl font-bold mb-2">{instructor.name}</h3>
-                            <p className="text-gray-700 mb-2">{instructor.specialization}</p>
-                            <p className="text-gray-700">Students: {instructor.students}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
+  return (
+    <div>
+      <section
+        className="wonderful-section my-14 bg-gray-100 py-16"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div className="container mx-auto">
+          <h2 className="text-3xl text-center font-bold mb-8">
+            Our <span className="text-blue-500">Popular Instructors</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {instructors.map((instructor) => (
+              <div
+                key={instructor?._id}
+                className="wonderful-item bg-white p-8 rounded-lg shadow-lg"
+                data-aos="zoom-in"
+              >
+                <img
+                  src={instructor?.photo}
+                  alt="Instructor"
+                  className="wonderful-image mx-auto mb-4"
+                />
+                <div className="wonderful-details text-center">
+                  <h3 className="text-xl font-semibold mb-2">
+                    {instructor?.name}
+                  </h3>
+                  <p className="text-gray-700 mb-4">{instructor?.email}</p>
+                  <a href="#" className="btn btn-primary">
+                 Contact 
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default PopularInstructors;
+

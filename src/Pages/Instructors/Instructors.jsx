@@ -1,69 +1,59 @@
-import { useEffect, useState } from "react";
-
-
+import {  useEffect, useState } from "react";
 
 const Instructors = () => {
-   const [instructors, setInstructors] = useState();
-   // How does reduce work
+    const [instructors, setInstructors] = useState();
+   
     useEffect(() => {
-        // Simulating fetching instructor data
-        const fetchInstructors = async () => {
-            try {
-                const response = await fetch("http://localhost:5000/instructors");
-                const instructors = await response.json();
-                setInstructors(instructors);
-            } catch (error) {
-                console.error("Error fetching instructors:", error);
-            }
-        };
-
-        fetchInstructors();
+        fetch("http://localhost:5000/users")
+            .then((res) => res.json())
+            .then((data) => {
+                const instructorUsers = data.filter((user) => user.role === "instructor");
+                setInstructors(instructorUsers);
+            });
     }, []);
 
 
     return (
-        <div className="mt">
-            <div className="overflow-x-auto w-full ms-10">
-                <table className="table w-full">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th># </th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Email</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            instructors?.map((instructor, index) => <tr
-                                key={instructor.id}
-
-                            >
-                                <td>
-                                    {index + 1}
-                                </td>
-                                <td>
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src={instructor.image} alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    {instructor.name}
-                                </td>
-                                <td>  {instructor.email}</td>
-
-                            </tr>)
-                        }
-
-                    </tbody>
-                </table>
+       
+        <div>
+            <div
+                className="hero min-h-screen"
+                style={{ backgroundImage: `url("https://i.ibb.co/hm50pm7/instructor-cover.jpg")` }}
+            >
+                <div className="hero-overlay bg-opacity-70"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md space-y-7 ">
+                        <h1 className="mb-5 text-5xl font-bold ">Celebrating Excellence in Education</h1>
+                        <p className="text-2xl ">Recognizing the Best Teacher for Outstanding Impact and Dedication</p>
+                        <div className="flex items-center justify-center">
+                            <button className="btn btn-outline btn-accent">Give us Call</button>
+                            <p className="ml-5 text-lg"> +034748000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 className="my-14 text-5xl text-center font-bold mb-8">
+                <span className="text-primary">Our Honourable</span> Instructors
+            </h2>
+            <div className="my-14 grid md:grid-cols-3 gap-4 mt-12">
+                {instructors?.map((instructor) => (
+                    <div key={instructor?._id} className="card card-compact w-96 bg-blue-300 shadow-xl">
+                        <figure>
+                            <img src={instructor?.
+                                photo
+                            } alt="Instructor" />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="card-title">Instructor Name: {instructor?.name}</h2>
+                            <p>Email: {instructor?.email}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );
 };
+
+
 
 export default Instructors;

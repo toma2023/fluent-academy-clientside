@@ -6,6 +6,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 const AddAClass = () => {
+    const enrollStudent = 0;
     const { user } = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
     const { register, handleSubmit, reset } = useForm();
@@ -22,16 +23,19 @@ const AddAClass = () => {
             .then((imgResponse) => {
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
-                    const { className, seats, price,name,email } = data;
+                    const { className, seats, price, name, email } = data;
                     const newClass = {
                         name,
                         className,
-                        seats,
+                        seats: parseFloat(seats),
                         email: email,
                         price: parseFloat(price),
                         image: imgURL,
-                        status: 'pending' // Set the status to 'pending' when creating a class
+                        status: 'pending',
+                        enrollStudent: parseFloat(enrollStudent) ,
+                        userPhoto: user.photoURL
                     };
+                  
                     axiosSecure
                         .post('/addClass', newClass)
                         .then((data) => {
@@ -113,7 +117,7 @@ const AddAClass = () => {
                         placeholder="Instructor Email"
                         {...register("email", { required: true, maxLength: 120 })}
                         className="input input-bordered w-full max-w-xs"
-                       
+
                     />
                 </div>
                 <div className="form-control w-full mb-4">

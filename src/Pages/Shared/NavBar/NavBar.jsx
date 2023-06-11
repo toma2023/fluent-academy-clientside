@@ -1,15 +1,10 @@
 import { useContext } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-//import { FaShoppingCart } from "react-icons/fa";
-import {  MdBookmarkAdd } from "react-icons/md";
-import useSelectedCourse from "../../Hooks/useSelectedCourse";
-
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [selects] = useSelectedCourse();
-   
+
     const handleLogOut = () => {
         logOut()
             .then()
@@ -27,24 +22,13 @@ const NavBar = () => {
             <li>
                 <Link to="/classes" className="text-lg lg:text-white font-bold">Classes</Link>
             </li>
-            <li>
-                <Link to="/dashboard" className="text-lg lg:text-white font-bold">Dashboard</Link>
-            </li>
-            <li><Link to="/dashboard/mySelectedClass">
-           
-            <button className="btn gap-2">
-                <MdBookmarkAdd></MdBookmarkAdd>
-                <div className="badge badge-primary">{selects?.length || 0}</div>
-            </button>
-        </Link></li>
-
-
             {user ? <>
+                <>
+                    <li><Link to="/dashboard " className="text-lg lg:text-white font-bold">Dashboard </Link></li>
+                </>
                 <button onClick={handleLogOut} className="btn btn-ghost text-lg">LogOut</button>
             </>
-                : <> <li><Link to="/login">Login</Link> </li></>}
-
-
+                : <> <li><Link to="/login" className="text-lg lg:text-white font-bold">Login</Link> </li></>}
         </>
     );
 
@@ -60,7 +44,11 @@ const NavBar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow text-black bg-base-700 rounded-box w-52">
                             {navItems}
-
+                            {user && (
+                                <>
+                                    <li><Link to="/dashboard/mySelectedClass"> </Link></li>
+                                </>
+                            )}
                         </ul>
                     </div>
                     <Link to="/" className="btn btn-ghost normal-case text-2xl">Fluent <span className="text-blue-400">Academy </span></Link>
@@ -71,8 +59,6 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-
-
                     <label className="btn btn-ghost btn-circle avatar">
                         {user && (
                             <div className="w-24 rounded-full">
@@ -83,9 +69,6 @@ const NavBar = () => {
                             </div>
                         )}
                     </label>
-
-
-
                 </div>
             </div>
         </>

@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 const MySelectedClasses = () => {
     const [selects, refetch] = useSelectedCourse();
-    const total = selects.reduce((sum, item) => item.price + sum, 0)
+
+
     const handleDelete = item => {
         Swal.fire({
             title: 'Are you sure?',
@@ -42,8 +43,8 @@ const MySelectedClasses = () => {
             <div className=" flex text-2xl font-semibold justify-evenly gap-4">
                 <h2 >My Selected Classes</h2>
                 <h2>Total Items: {selects.length}</h2>
-                <h2>Total Price: $ {total}</h2>
-               <Link to="/dashboard/payment"> <button className="btn btn-primary">Pay</button></Link>
+               
+
             </div>
             <div className="overflow-x-auto w-full ms-10">
                 <table className="table w-full">
@@ -55,6 +56,7 @@ const MySelectedClasses = () => {
                             <th>Course Name</th>
                             <th>Price</th>
                             <th>Action</th>
+                            <th>PAyment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,6 +84,10 @@ const MySelectedClasses = () => {
                                         <FaTrashAlt></FaTrashAlt>
                                     </button>
                                 </td>
+                                <td>
+                                    <Link to={`/dashboard/payment/${item._id}`}> <button className="btn btn-primary">Pay</button></Link>
+                                </td>
+
                             </tr>)
                         }
 

@@ -16,6 +16,11 @@ import ManageClasses from "../Pages/Instructors/Admin/ManageClasses";
 import MyClasses from "../Pages/Instructors/MyClasses";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClass/MySelectedClasses";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import MyEnrolledClasses from "../Pages/Dashboard/MySelectedClass/MyEnrolledClasses";
+import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
+import UpdateMyClasses from "../Pages/Instructors/UpdateMyClasses";
+import ErrorPage from "../ErrorPage";
+
 
 
 
@@ -23,6 +28,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -43,12 +49,14 @@ export const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
-            }
+            },
+           
         ]
     },
     {
         path: 'dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: 'mySelectedClass',
@@ -71,8 +79,22 @@ export const router = createBrowserRouter([
                 element: <MyClasses></MyClasses>
             },
             {
-                path: 'payment',
-                element: <Payment></Payment>
+                path: 'payment/:id',
+                element:<Payment></Payment> ,
+              
+            },
+            {
+                path: 'enrolledClasses',
+                element: <MyEnrolledClasses></MyEnrolledClasses>
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
+            },
+            {
+                path: 'updateMyClass/:id',
+                element: <UpdateMyClasses></UpdateMyClasses>,
+                loader: ({params})=>fetch(`http://localhost:5000/updateMyClass/${params.id}`)
             }
         ]
     }

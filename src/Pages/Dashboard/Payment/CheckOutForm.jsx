@@ -3,9 +3,9 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
-import './CheckoutForm.css'
+//import './CheckoutForm.css'
 
-const CheckOutForm = ({selects , price}) => {
+const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -15,14 +15,18 @@ const CheckOutForm = ({selects , price}) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
 
+    const enrollStudent = selects?.map(item => item?.enrollStudent)
+    const seats = selects?.map(item => item?.seats)
+    console.log(enrollStudent)
+    console.log(selects)
     useEffect(() => {
-        if (price > 0) {
-            axiosSecure.post('/create-payment-intent', { price })
+        if (payPrice > 0) {
+            axiosSecure.post('/create-payment-intent', { price: payPrice })
                 .then(res => {
                     setClientSecret(res.data.clientSecret);
                 })
         }
-    }, [price, axiosSecure])
+    }, [payPrice, axiosSecure])
 
 
     const handleSubmit = async (event) => {
@@ -71,19 +75,26 @@ const CheckOutForm = ({selects , price}) => {
             const payment = {
                 email: user?.email,
                 transactionId: paymentIntent.id,
-                price,
+                price: payPrice,
                 date: new Date(),
-                quantity: selects.length,
-                addItems: selects.map(item => item._id),
-                selectedItems: selects.map(item => item.selectItemId
-                    ),
+                 enrollStudent: selects?.map(item=>item?.enrollStudent),
+                seats: selects?.map(item=>item?.seats),
+                addItems: selects?.map(item => item?._id),
+                selectedItems: selects?.map(item => item?.selectItemId
+                ),
                 status: 'service pending',
-                itemNames: selects.map(item => item.name)
+                classImg: selects?.map(item => item?.image),
+                instructorNames: selects.map(item => item?.name),
+                classNames: selects.map(item => item?.className)
             }
+
+        
+
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
-                    if (res.data.result.insertedId) {
+                    refetch();
+                    if (res?.data?.result?.insertedId) {
                         // display confirm
                     }
                 })

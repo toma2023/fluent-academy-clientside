@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Pages/Hooks/UseAdmin";
 import useInstructor from "../Pages/Hooks/useInstructor";
 import { SiGoogleclassroom } from "react-icons/si";
-import { MdAssignmentAdd, MdBookmarkAdd, MdOutlineAddChart, MdPayments } from "react-icons/md";
+import { MdAssignmentAdd, MdBookmarkAdd, MdOutlineAddChart } from "react-icons/md";
 import useSelectedCourse from "../Pages/Hooks/useSelectedCourse";
 
 
@@ -29,9 +29,7 @@ const Dashboard = () => {
             <div className="drawer-side ">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-blue-400 ">
-                    <li>
-                        <NavLink to="/"><FaHome></FaHome>  Home </NavLink>
-                    </li>
+
 
                     {
                         isAdmin ? (<>
@@ -49,77 +47,35 @@ const Dashboard = () => {
                         </>) : isInstructor ? (
 
                             <>
+                                <li><NavLink to="/"><FaHome></FaHome> Instructor Home </NavLink></li>
                                 <li>
                                     <NavLink to="/dashboard/addAClass" className="hover:bg-emerald-700"><MdAssignmentAdd></MdAssignmentAdd> Add a Class  </NavLink>
                                 </li>
                                 <li className="mt-2">
                                     <NavLink to="/dashboard/myClasses" className="hover:bg-emerald-700"><MdOutlineAddChart></MdOutlineAddChart> My Classes  </NavLink>
                                 </li>
-                                <li className="mt-2">
-                                    <NavLink to="/dashboard/addClass" className="hover:bg-emerald-700"><MdOutlineAddChart></MdOutlineAddChart>Total Enrolled Students </NavLink>
-                                </li>
+                               
 
                             </>
 
                         ) : (
                             <>
-
+                                <li><NavLink to="/"><FaHome></FaHome> student Home </NavLink></li>
                                 <li>
                                     <NavLink to="/dashboard/mySelectedClass">   <MdBookmarkAdd></MdBookmarkAdd> My Selected Classes <span className="badge badge-secondary">+{selects?.length || 0}</span></NavLink>
                                 </li>
+                                {/* <li>
+                                    <NavLink to={`/dashboard/payment/${item._id}`}><MdPayments></MdPayments>  Payment  </NavLink>
+                                </li> */}
                                 <li>
-                                    <NavLink to="/dashboard/payment"><MdPayments></MdPayments>  Payment  </NavLink>
+                                    <NavLink to="/dashboard/enrolledClasses"><FaBook></FaBook>  My Enrolled Class </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/booked"><FaBook></FaBook>  My Enrolled Class </NavLink>
+                                    <NavLink to="/dashboard/paymentHistory"><FaBook></FaBook>  Payment History </NavLink>
                                 </li>
-
                             </>
-
-                        )
-                        //     <>
-                        //     <li>
-                        //         <NavLink to="/"><FaHome></FaHome>  Home </NavLink>
-                        //     </li>
-                        //     <li>
-                        //         <NavLink to="/dashboard/mySelectedClass">   <MdBookmarkAdd></MdBookmarkAdd> My Selected Classes</NavLink>
-                        //     </li>
-                        //     <li>
-                        //         <NavLink to="/dashboard/payment"><MdPayments></MdPayments>  Payment History </NavLink>
-                        //     </li>
-                        //     <li>
-                        //         <NavLink to="/dashboard/booked"><FaBook></FaBook>  My Enrolled Class </NavLink>
-                        //     </li>
-
-                        // </>
-
-                    }
-                    {/* instructor dashboard */}
-
-
-
-
-
-
-                    {/* {
-                        isAdmin && (
-                            <>
-                                <li>
-                                    <NavLink to="/" className="hover:bg-emerald-700"><FaHome></FaHome>Admin Home </NavLink>
-                                </li>
-                                
-                                
-                                <li> <NavLink to="/dashboard/allUsers"><FaUsers></FaUsers>   Manage All Users</NavLink></li>
-                            </>
-
-
-
                         )
                     }
-                    {/* instructor dashboard */}
-
-
-
                 </ul>
             </div>
         </div>
