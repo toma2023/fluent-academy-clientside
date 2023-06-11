@@ -20,7 +20,7 @@ const Register = () => {
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email, photo: data.photoURL, role: "student" };
                         console.log(saveUser);
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://fluent-academy-server.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'

@@ -29,7 +29,7 @@ Fluent Academy is a language learning platform that offers a comprehensive and i
 * MongoDB
 * [Additional technologies/packages]
 ## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://fluent-academy-3dd7b.web.app/)
 
 
 

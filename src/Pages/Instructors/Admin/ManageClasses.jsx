@@ -6,7 +6,7 @@ const ManageClasses = () => {
   const [addClass, , refetch] = useAddClass();
   const updateClassStatus = (id, status) => {
     console.log(status, id);
-    fetch(`http://localhost:5000/addClass/${id}`, {
+    fetch(`https://fluent-academy-server.vercel.app/addClass/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -35,7 +35,7 @@ const ManageClasses = () => {
     })
 
     if (text) {
-      axios.put(`http://localhost:5000/addFeedback/${id}`, {feedback: text})
+      axios.put(`https://fluent-academy-server.vercel.app/addFeedback/${id}`, {feedback: text})
         .then(res => console.log(res.data))
       Swal.fire(text)
     }

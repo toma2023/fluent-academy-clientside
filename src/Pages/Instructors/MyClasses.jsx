@@ -9,7 +9,7 @@
 //     const { user } = useContext(AuthContext)
 //     const [classes, setClasses] = useState([]);
 //     useEffect(() => {
-//         fetch('http://localhost:5000/addClass')
+//         fetch('https://fluent-academy-server.vercel.app/addClass')
 //             .then(res => res.json())
 //             .then(data => {
 //                 const filteredClass = data.filter(filtered => filtered.email
@@ -112,7 +112,7 @@ const MyClasses = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/addClass")
+        fetch("https://fluent-academy-server.vercel.app/addClass")
             .then(res => res.json())
             .then(data => {
                 setClasses(data);

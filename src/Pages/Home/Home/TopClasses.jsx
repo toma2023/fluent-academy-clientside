@@ -4,7 +4,7 @@
 // const TopClasses = () => {
 //     const [topClass, setTopClass] = useState([]);
 //     useEffect(() => {
-//         fetch(`http://localhost:5000/topClass?limit=${6}&sortBy=enrollStudent`)
+//         fetch(`https://fluent-academy-server.vercel.app/topClass?limit=${6}&sortBy=enrollStudent`)
 //           .then((res) => res.json())
 //           .then((data) => {
 //             console.log(data)

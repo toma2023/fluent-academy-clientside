@@ -4,7 +4,7 @@ const Instructors = () => {
     const [instructors, setInstructors] = useState();
    
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("https://fluent-academy-server.vercel.app/users")
             .then((res) => res.json())
             .then((data) => {
                 const instructorUsers = data.filter((user) => user.role === "instructor");

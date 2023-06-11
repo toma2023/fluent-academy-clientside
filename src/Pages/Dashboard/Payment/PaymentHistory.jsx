@@ -7,7 +7,7 @@ const PaymentHistory = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/payments/${user.email}`)
+      fetch(`https://fluent-academy-server.vercel.app/payments/${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           // Sort the payment history in descending order based on the date
