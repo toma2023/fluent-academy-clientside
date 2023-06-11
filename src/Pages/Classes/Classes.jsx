@@ -73,7 +73,22 @@ const Classes = () => {
 
     return (
         <div>
-            <h2>Approved Classes</h2>
+             <div
+                className="hero min-h-screen"
+                style={{ backgroundImage: `url("https://i.ibb.co/qCGNc5v/ins-cls.webp")` }}
+            >
+                <div className="hero-overlay bg-opacity-70"></div>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md space-y-7 ">
+                        <h1 className="mb-5 text-5xl font-bold ">Celebrating Excellence in Education</h1>
+                        <p className="text-2xl ">Recognizing the Best Teacher for Outstanding Impact and Dedication</p>
+                        <div className="flex items-center justify-center">
+                            <button className="btn btn-outline btn-accent">Give us Call</button>
+                            <p className="ml-5 text-lg"> +034748000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className='grid md:grid-cols-3 gap-8 my-32'>
                 {approvedClasses.map(data => (
                     <div key={data?._id} className='grid md:grid-cols-3 gap-8'>

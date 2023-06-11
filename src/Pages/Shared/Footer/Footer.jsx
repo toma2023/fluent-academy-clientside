@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footer = () => {
     return (
         <footer>
-            <div className="footer p-10 bg-base-300 text-base-content">
+            <div className="footer p-10 bg-base-300 text-base-content ">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Language</a>
@@ -37,7 +37,7 @@ const Footer = () => {
 
             </div>
             
-                <div className=" text-center p-4 bg-base-300 text-base-content">
+                <div className=" text-center p-4 bg-base-300 text-base-content mb-12">
                     <p>Copyright © 2023 - All right reserved by FluentAcademy.com</p>
                 </div>
           

@@ -13,6 +13,7 @@ const Home = () => {
 
   return (
     <div> 
+   
       <ThemeProvider>
       <Banner></Banner>
       {/* <PopularClasses></PopularClasses> */}
