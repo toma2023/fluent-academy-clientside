@@ -87,9 +87,9 @@ const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
                 classNames: selects.map(item => item?.className)
             }
 
-        console.log(payment)
+        
 
-            axiosSecure.post('/payments', payment)
+            axiosSecure?.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
                     refetch();
