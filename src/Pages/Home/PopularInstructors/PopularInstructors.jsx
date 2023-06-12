@@ -28,8 +28,8 @@ const PopularInstructors = () => {
         data-aos-delay="200"
       >
         <div className="container mx-auto">
-          <h2 className="text-3xl text-center font-bold mb-8">
-            Our <span className="text-blue-500">Popular Instructors</span>
+          <h2 className="text-5xl text-center font-bold mb-8">
+            Our <span className="text-blue-600">Popular Instructors</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {instructors.map((instructor) => (

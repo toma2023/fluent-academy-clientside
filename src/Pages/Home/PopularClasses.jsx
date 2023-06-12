@@ -28,7 +28,7 @@ const PopularClasses = () => {
                   className="w-32 h-32 object-cover rounded-full mb-4"
                 />
                 <h3 className="text-xl font-bold mb-2">{cls?.className}</h3>
-                <p className="text-gray-600">{cls?.seats} students</p>
+                <p className="text-gray-600">Available seats: {cls?.seats} </p>
                 <p className="text-gray-600">Enrolled: {cls?.enrollStudent} </p>
               </div>
             ))}

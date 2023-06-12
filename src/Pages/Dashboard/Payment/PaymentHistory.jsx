@@ -23,7 +23,7 @@ const PaymentHistory = () => {
   }, [user?.email]);
 
   return (
-    <div>
+    <div className="my-14">
       <h2 className="text-5xl text-center font-bold my-14">My <span className="text-secondary">Payment</span> History</h2>
       {paymentsHistory.length > 0 ? (
         <table className="min-w-full bg-white border border-gray-300">

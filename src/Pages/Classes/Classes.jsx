@@ -89,10 +89,14 @@ const Classes = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid md:grid-cols-3 gap-8 my-32'>
-                {approvedClasses.map(data => (
+            <h2 className="text-5xl text-center font-bold mt-14">Our
+             <span className="text-blue-600"> Classes </span>
+          </h2>
+            <div className='grid md:grid-cols-3 gap-8 my-14'>
+           
+                {approvedClasses?.map(data => (
                     <div key={data?._id} className='grid md:grid-cols-3 gap-8'>
-                        <div className={`card w-96 bg-${data.seats === 0 ? 'red' : 'base-100'} shadow-xl`}>
+                        <div className={`card w-96 bg-${data?.seats === 0 ? 'red' : 'base-100'} shadow-xl`}>
                             <figure>
                                 <img src={data?.image} alt="Class" />
                             </figure>
