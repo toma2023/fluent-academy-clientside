@@ -31,7 +31,7 @@ const Dashboard = () => {
                     {
                         isAdmin ? (<>
                             <li><NavLink to="/"><FaHome></FaHome> Admin Home </NavLink></li>
-                            <li><NavLink to="/"><FaHome></FaHome> All Classes </NavLink></li>
+                           
                             <li>
                                 <NavLink to="/dashboard/manageClasses" className="hover:bg-emerald-700">
                                     <SiGoogleclassroom></SiGoogleclassroom>    Manage Classes </NavLink>
