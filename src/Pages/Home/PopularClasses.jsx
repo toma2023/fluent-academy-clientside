@@ -8,7 +8,7 @@ const PopularClasses = () => {
         queryKey: ["topClass"],
         queryFn: async () => {
         const res = await axiosSecure(`/topClass?limit=${6}&sortBy=enrollStudent`);
-        console.log(res.data);
+      //  console.log(res.data);
         return res.data;
         }
     })
