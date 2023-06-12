@@ -8,9 +8,6 @@ const AnimationSection = () => {
 
     return (
         <div className="my-14">
-            {/* Your existing sections */}
-
-            {/* Additional section with animation */}
              <motion.section
                 className="bg-blue-500 text-white py-12"
                 variants={sectionVariants}
