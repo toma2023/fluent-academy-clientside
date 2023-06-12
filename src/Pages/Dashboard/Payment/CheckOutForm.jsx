@@ -121,7 +121,7 @@ const CheckOutForm = ({ selects, refetch, price: payPrice }) => {
                         },
                     }}
                 />
-                <p>36227206271667 1245125</p>
+               
                 <button className="btn btn-primary btn-sm mt-4" type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
