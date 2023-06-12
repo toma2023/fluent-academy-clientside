@@ -22,8 +22,6 @@ import UpdateMyClasses from "../Pages/Instructors/UpdateMyClasses";
 import ErrorPage from "../ErrorPage";
 
 
-
-
 export const router = createBrowserRouter([
     {
         path: "/",

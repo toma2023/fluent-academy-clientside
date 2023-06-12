@@ -60,10 +60,7 @@ const Dashboard = () => {
                                 <li><NavLink to="/"><FaHome></FaHome> student Home </NavLink></li>
                                 <li>
                                     <NavLink to="/dashboard/mySelectedClass">   <MdBookmarkAdd></MdBookmarkAdd> My Selected Classes <span className="badge badge-secondary">+{selects?.length || 0}</span></NavLink>
-                                </li>
-                                {/* <li>
-                                    <NavLink to={`/dashboard/payment/${item._id}`}><MdPayments></MdPayments>  Payment  </NavLink>
-                                </li> */}
+                                </li>                              
                                 <li>
                                     <NavLink to="/dashboard/enrolledClasses"><FaBook></FaBook>  My Enrolled Class </NavLink>
                                 </li>

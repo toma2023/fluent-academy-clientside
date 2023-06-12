@@ -19,9 +19,6 @@ const Login = () => {
     };
 
 
-
-
-
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         signIn(data.email, data.password)
