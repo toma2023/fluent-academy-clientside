@@ -3,8 +3,8 @@ import { BsArrowRight } from "react-icons/bs";
 
 const Questions = () => {
     return (
-        <div className='grid grid-cols-2 gap-3 my-16'>
-            <div>
+        <div className='grid md:grid-cols-2 gap-10 my-16 p-6 md:p-0'>
+            <div className="order-2 md:order-1 mt-5 md:mt-0">
                 <h2 className="text-5xl font-semibold"><span className="text-blue-600">Popular Questions</span> About our
                     Language Courses</h2>
 
@@ -69,7 +69,7 @@ const Questions = () => {
                 </div>
 
             </div>
-            <div>
+            <div className="order-1 md:order-2">
                 <img className="rounded-md" src="https://i.ibb.co/yk9QsxP/faq-lang.jpg" alt="" />
             </div>
 
