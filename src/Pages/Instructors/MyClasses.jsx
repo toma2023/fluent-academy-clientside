@@ -6,7 +6,7 @@ const MyClasses = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch("https://fluent-academy-server.vercel.app/addClass")
+        fetch("http://localhost:5000/addClass")
             .then(res => res.json())
             .then(data => {
                 setClasses(data);

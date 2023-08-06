@@ -14,7 +14,7 @@ const PopularClasses = () => {
 
     return (
         <div>
-         <h2 className="md:text-5xl text-center font-bold my-14">Our<span className="text-primary"> Popular</span>  Classes</h2>
+         <h2 className="md:text-5xl text-center font-bold my-14">Our Popular<span className="text-blue-600"> Classes </span>  </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {topClass?.map((cls) => (
               <div

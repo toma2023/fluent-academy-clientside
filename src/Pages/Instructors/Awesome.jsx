@@ -6,7 +6,7 @@ const Awesome = () => {
     return (
         <div className="flex flex-col items-center justify-center pb-14">
             <Fade triggerOnce>
-            <h2 className="md:text-5xl text-center font-semibold mb-14">Our <span className="text-secondary">Features</span> </h2>
+            <h2 className="md:text-5xl text-center font-semibold mb-14">Our <span className="text-blue-600">Features</span> </h2>
             </Fade>
             <div className="flex flex-wrap justify-center">
                 <Slide direction="left" cascade triggerOnce damping={0.1} delay={200}>

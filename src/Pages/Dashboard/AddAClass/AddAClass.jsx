@@ -39,8 +39,8 @@ const AddAClass = () => {
           axiosSecure
             .post('/addClass', newClass)
             .then((data) => {
-              console.log('after posting new class', data.data);
-              if (data.data.insertedId) {
+              console.log('after posting new class', data?.data);
+              if (data?.data?.insertedId) {
                 reset();
                 Swal.fire({
                   position: 'top-end',

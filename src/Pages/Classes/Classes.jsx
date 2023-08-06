@@ -25,7 +25,7 @@ const Classes = () => {
           email: user.email,
         };
 
-        fetch('https://fluent-academy-server.vercel.app/selects', {
+        fetch('http://localhost:5000/selects', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

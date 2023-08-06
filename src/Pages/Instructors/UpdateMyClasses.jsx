@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useAddClass from "../Hooks/useAddClass";
 import Swal from "sweetalert2";
@@ -7,20 +7,21 @@ import Swal from "sweetalert2";
 
 const UpdateMyClasses = () => {
     const { id } = useParams();
-    const [addClass, , refetch] = useAddClass();
-    const [updatedMyClass, setUpdatedMyClass] = useState({});
+    const [addClass] = useAddClass();
+    //const [updatedMyClass, setUpdatedMyClass] = useState({});
 
     const updateMyClass = (event) => {
         event.preventDefault();
         const form = event.target;
         const price = parseFloat(form.price.value);
-        const seats = form.seats.value;
-        const className = form.className.value;
+        const seats = form?.seats?.value;
+        const className = form?.className?.value;
         const updatedClass = { price, seats, className };
-        setUpdatedMyClass(updatedClass);
+        //console.log("update class",updatedClass)
+        //setUpdatedMyClass(updatedClass);
 
         //send data to the server
-        fetch(`https://fluent-academy-server.vercel.app/updateMyClass/${id}`, {
+        fetch(`http://localhost:5000/updateMyClass/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -42,7 +43,7 @@ const UpdateMyClasses = () => {
             });
     };
 
-    const selectedClass = addClass.find((cls) => cls._id === id);
+    const selectedClass = addClass?.find((cls) => cls?._id === id);
     if (!selectedClass) {
         return <div>Loading...</div>;
     }

@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "picture": "https://i.ibb.co/7tfNW6k/review-1.jpg",
+      "comment": "Great product! I'm really impressed.",
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "picture": "https://i.ibb.co/zN8WdF9/review-5.jpg",
+      "rating": 5,
+      "comment": "This exceeded my expectations. Will recommend!"
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "picture": "https://i.ibb.co/vvxkSHq/review-3.jpg",
+      "rating": 4,
+      "comment": "The quality is top-notch. Very satisfied."
+    },
+    {
+      "id": 4,
+      "name": "Emily Williams",
+      "picture": "https://i.ibb.co/JB1dVcf/review-2.jpg",
+      "rating": 5,
+      "comment": "Beautiful design and fast shipping. Thank you!"
+    },
+    {
+      "id": 5,
+      "name": "David Brown",
+      "picture": "https://i.ibb.co/dWWrzZy/1000-F-189003225-a58-AZOvp-YRy-QHthv-Z2-QLZ343-HJPEAhva.jpg",
+      "rating": 5,
+      "comment": "I'm loving it! Can't wait to buy more from you."
+    }
+  ]
+  

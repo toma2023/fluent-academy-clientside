@@ -1,3 +1,6 @@
+import Questions from "../../../Questions";
+import Review from "../../../Review";
+import Subscribe from "../../../Subscribe";
 import Awesome from "../../Instructors/Awesome";
 import AnimationSection from "../AnimationSection/AnimationSection";
 import Banner from "../Banner/Banner";
@@ -15,6 +18,9 @@ const Home = () => {
       <PopularClasses></PopularClasses>
       <AnimationSection></AnimationSection>
       <Awesome></Awesome>
+      <Review></Review>
+      <Subscribe></Subscribe>
+      <Questions></Questions>
     </div>
   );
 };
