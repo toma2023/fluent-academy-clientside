@@ -92,7 +92,7 @@ export const router = createBrowserRouter([
             {
                 path: 'updateMyClass/:id',
                 element: <UpdateMyClasses></UpdateMyClasses>,
-                loader: ({params})=>fetch(`http://localhost:5000/updateMyClass/${params.id}`)
+                loader: ({params})=>fetch(`https://fluent-academy-server-toma570.vercel.app/updateMyClass/${params.id}`)
             }
         ]
     }

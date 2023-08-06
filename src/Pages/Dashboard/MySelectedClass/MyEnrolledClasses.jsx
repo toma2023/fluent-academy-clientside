@@ -7,7 +7,7 @@ const MyEnrolledClasses = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:5000/payments/${user.email}`)
+            fetch(`https://fluent-academy-server-toma570.vercel.app/payments/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setEnrollments(data);

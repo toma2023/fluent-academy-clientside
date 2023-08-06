@@ -5,7 +5,7 @@ const useAddClass = () => {
     const { data: addClass = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['addClass'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/addClass');
+            const res = await fetch('https://fluent-academy-server-toma570.vercel.app/addClass');
             return res.json();
         }
     })

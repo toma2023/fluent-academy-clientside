@@ -21,7 +21,7 @@ const UpdateMyClasses = () => {
         //setUpdatedMyClass(updatedClass);
 
         //send data to the server
-        fetch(`http://localhost:5000/updateMyClass/${id}`, {
+        fetch(`https://fluent-academy-server-toma570.vercel.app/updateMyClass/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

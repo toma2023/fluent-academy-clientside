@@ -6,7 +6,7 @@ const ManageClasses = () => {
   const [addClass, , refetch] = useAddClass();
   const updateClassStatus = (id, status) => {
     console.log(status, id);
-    fetch(`http://localhost:5000/addClass/${id}`, {
+    fetch(`https://fluent-academy-server-toma570.vercel.app/addClass/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -35,7 +35,7 @@ const ManageClasses = () => {
     })
 
     if (text) {
-      axios.put(`http://localhost:5000/addFeedback/${id}`, {feedback: text})
+      axios.put(`https://fluent-academy-server-toma570.vercel.app/addFeedback/${id}`, { feedback: text })
         .then(res => console.log(res.data))
       Swal.fire(text)
     }
@@ -43,8 +43,9 @@ const ManageClasses = () => {
 
   return (
     <div className="my-14">
-     <h2 className="text-5xl ml-16 font-semibold mb-8"><span className="text-secondary">Manage</span> Classes</h2>
-      <table className="min-w-full divide-y divide-gray-200">
+      <h2 className="text-5xl ml-16 font-semibold mb-8"><span className="text-secondary">Manage</span> Classes</h2>
+      <div className="overflow-x-auto ">
+        <table className="table  divide-gray-200">
         <thead className="bg-gray-50">
           <tr>
             <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -137,6 +138,8 @@ const ManageClasses = () => {
           ))}
         </tbody>
       </table>
+
+      </div>
     </div>
   );
 };
