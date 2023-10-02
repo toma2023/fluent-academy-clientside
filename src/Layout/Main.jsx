@@ -5,12 +5,15 @@ import NavBar from "../Pages/Shared/NavBar/NavBar";
 
 const Main = () => {
     return (
-        <div>
-            <NavBar></NavBar>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
-    );
+		<div>
+			<NavBar></NavBar>
+			<div>
+				<Outlet></Outlet>
+			</div>
+
+			<Footer></Footer>
+		</div>
+	);
 };
 
 export default Main;

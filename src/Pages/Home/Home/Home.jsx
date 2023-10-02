@@ -9,19 +9,25 @@ import PopularInstructors from "../PopularInstructors/PopularInstructors";
 
 
 const Home = () => {
-
+ const dynamicClass = "max-w-screen-xl mx-auto";
   return (
-    <div> 
-   
-      <Banner></Banner>
-      <PopularInstructors></PopularInstructors>
-      <PopularClasses></PopularClasses>
-      <AnimationSection></AnimationSection>
-      <Awesome></Awesome>
-      <Review></Review>
-      <Subscribe></Subscribe>
-      <Questions></Questions>
-    </div>
+		<div>
+			<Banner />
+			<PopularInstructors />
+			<div className={dynamicClass}>
+				<PopularClasses />
+			</div>
+			<AnimationSection />
+			<div className={dynamicClass}>
+				<Awesome />
+				<Review />
+			</div>
+
+			<Subscribe />
+			<div className={dynamicClass}>
+				<Questions />
+			</div>
+		</div>
   );
 };
 

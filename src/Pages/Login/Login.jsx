@@ -39,45 +39,72 @@ const Login = () => {
 
     }
     return (
-        <div>
+		<div className='max-w-screen-xl mx-auto'>
+			<div className='hero min-h-screen bg-base-200 mb-12'>
+				<div className='hero-content flex-col lg:flex-row gap-4'>
+					<div className='text-center lg:text-left'>
+						<img
+							src='https://i.ibb.co/LvbB0Ys/login-removebg-preview.png'
+							alt=''
+						/>
+					</div>
+					<div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+						<div className='card-body'>
+							<h1 className='text-5xl font-bold'>Login now!</h1>
+							<form onSubmit={handleSubmit(onSubmit)}>
+								<div className='form-control'>
+									<label className='label'>
+										<span className='label-text'>
+											Email
+										</span>
+									</label>
+									<input
+										type='text'
+										{...register("email", {
+											required: true,
+											maxLength: 120,
+										})}
+										name='email'
+										placeholder='email'
+										className='input input-bordered'
+									/>
+								</div>
+								<div className='mb-4'>
+									<label
+										className='block text-gray-700 text-sm font-bold mb-2'
+										htmlFor='password'
+									>
+										Password:
+									</label>
 
-            <div className="hero min-h-screen bg-base-200 mb-12">
-                <div className="hero-content flex-col lg:flex-row gap-4">
-                    <div className="text-center lg:text-left">
-                        <img src="https://i.ibb.co/LvbB0Ys/login-removebg-preview.png" alt="" />
-                    </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
-                            <h1 className="text-5xl font-bold">Login now!</h1>
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input type="text"  {...register("email", { required: true, maxLength: 120 })} name="email" placeholder="email" className="input input-bordered" />
-                                </div>
-                                <div className="mb-4">
-                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">Password:</label>
+									<div className='flex items-center '>
+										<input
+											className='input input-bordered w-full'
+											type={
+												passwordVisible
+													? "text"
+													: "password"
+											}
+											id='password'
+											{...register("password", {
+												required: true,
+												maxLength: 120,
+											})}
+										/>
+										<span
+											className='text-blue-500 ml-2 cursor-pointer'
+											onClick={handlePasswordVisibility}
+										>
+											{passwordVisible ? (
+												<AiOutlineEyeInvisible />
+											) : (
+												<AiOutlineEye />
+											)}
+										</span>
+									</div>
+								</div>
 
-                                    <div className="flex items-center ">
-                                    <input
-                                        className="input input-bordered w-full"
-                                        type={passwordVisible ? 'text' : 'password'}
-                                        id="password"
-                                        {...register('password', { required: true, maxLength: 120 })}
-                                    />
-                                   <span
-                                        className="text-blue-500 ml-2 cursor-pointer"
-                                        onClick={handlePasswordVisibility}
-                                    >
-                                        {passwordVisible ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-                                    </span>
-                                    </div>
-                                    
-                                    
-                                </div>
-                                
-                                {/* <div>
+								{/* <div>
                                     <label htmlFor="password">
                                     <span className="label-text">Password</span>
                                         </label>
@@ -91,21 +118,31 @@ const Login = () => {
                                         {passwordVisible ? 'Hide' : 'Show'}
                                     </span>
                                 </div> */}
-                                <div className="form-control mt-6">
-
-                                    <input className="btn btn-active btn-neutral" type="submit" value="Login" />
-                                </div>
-
-                            </form>
-                            <p className='my-4 text-center'>New to Fluent Academy ? <Link className='text-blue-600 font-bold' to="/register"> Sign Up</Link> </p>
-                            <SocialLogin></SocialLogin>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+								<div className='form-control mt-6'>
+									<input
+										className='btn btn-active btn-neutral'
+										type='submit'
+										value='Login'
+									/>
+								</div>
+							</form>
+							<p className='my-4 text-center'>
+								New to Fluent Academy ?{" "}
+								<Link
+									className='text-blue-600 font-bold'
+									to='/register'
+								>
+									{" "}
+									Sign Up
+								</Link>{" "}
+							</p>
+							<SocialLogin></SocialLogin>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Login;
